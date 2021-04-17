@@ -1,5 +1,6 @@
 RED='\033[1;31m'
 GREEN='\033[1;32m'
+CYAN='\033[0;36m'
 NOCOLOR='\033[0m'
 TITLE='\033[0;33m'
 GIT='\033[1;35m'
@@ -11,11 +12,12 @@ if [ "$EUID" -ne 0 ]
 fi
 echo -e "${TITLE}Preliminary Check: ${GREEN}Successful${NOCOLOR}"
 echo -e "${TITLE}Phase Zero: ${GREEN}Setting-Up Auto Updater ${NOCOLOR}"
+echo -e "${CYAN}Establishing connection with ${GREEN}www.anirudhrath.tech${NOCOLOR}"
 cd /usr/local/sbin/
-echo Setting up script to run with Startup
+echo -e "${GREEN} Setting up script to run with Startup${NOCOLOR}"
 wget https://www.anirudhrath.tech/hostFiles/updater.sh
 
-echo Setting up updater script as a service
+echo -e "${GREEN}Setting up updater script as a Service${NOCOLOR}"
 cd /etc/systemd/system/
 wget https://www.anirudhrath.tech/hostFiles/updater.service
 
